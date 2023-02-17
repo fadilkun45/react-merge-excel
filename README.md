@@ -5,4 +5,5 @@ combined 2 xlsx file
 # getting started
 
 > npm install
-> run dev
+
+> npm run dev
