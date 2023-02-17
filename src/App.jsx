@@ -8,7 +8,6 @@ function App() {
 
 
   const uploadFile = (item, name) => {
-    console.log(file)
     setFile([
       ...file, item.target.files[0]
     ])
@@ -39,7 +38,6 @@ function App() {
   }
 
   function generateArrayBufferFromXLSX(file) {
-    console.log(file)
 
     return readFileAsArrayBuffer(file)
       .then(arrayBuffer => {
@@ -53,11 +51,7 @@ function App() {
 
 
   const mergeXLSX = async () => {
-    // Load each xlsx file
-
-    // const file1 = XLSX.readFile(await generateArrayBufferFromXLSX(file?.file1), { type: "buffer" });
-    // const file2 = XLSX.readFile(await generateArrayBufferFromXLSX(file?.file2), { type: "buffer" });
-
+  
     let datas = []
 
     for (let i = 0; i < file.length; i++) {
@@ -69,23 +63,8 @@ function App() {
 
       datas.push(...data)
 
-      console.log(datas)
-
     }
 
-
-    // useEffect(() => {
-    //   console.log(file)
-    // },[file])
-
-    // // Parse the data from each file
-    // const sheet1 = file1.Sheets['Sheet1'];
-    // const sheet2 = file2.Sheets['Sheet1'];
-    // const data1 = XLSX.utils.sheet_to_json(sheet1);
-    // const data2 = XLSX.utils.sheet_to_json(sheet2);
-
-    // // Combine the data into a single array
-    // const combinedData = data1.concat(data2);
 
     // Create a new workbook and worksheet
     const newWorkbook = XLSX.utils.book_new();
